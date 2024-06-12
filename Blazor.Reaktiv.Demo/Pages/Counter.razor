@@ -1,0 +1,15 @@
+﻿@page "/counter"
+@inherits ReactiveComponentBase
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @CountState.CurrentCount</p>
+
+<CountingArea />
+
+
+@code {
+    [Reactive] private CountState CountState { get; set; } = default!;
+}

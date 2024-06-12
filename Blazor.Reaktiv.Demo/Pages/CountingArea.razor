@@ -1,0 +1,7 @@
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    [Inject] public CountService CountService { get; set; } = default!;
+
+    private void IncrementCount() => CountService.Increment();
+}

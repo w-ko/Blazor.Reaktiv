@@ -1,0 +1,7 @@
+@inherits ReactiveComponentBase
+
+Current count: @CountState.CurrentCount
+
+@code {
+    [Reactive] private CountState CountState { get; set; } = default!;
+}
