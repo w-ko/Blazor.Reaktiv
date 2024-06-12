@@ -45,6 +45,4 @@ public abstract class ReactiveComponentBase : OwningComponentBase, IDisposable
     {
         ObserverManager.Detach(this);
     }
-
-    
 }
