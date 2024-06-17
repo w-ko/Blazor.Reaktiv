@@ -11,12 +11,18 @@ internal static class ReflectionExtensions
             .Where(p => Attribute.IsDefined(p, typeof(ReactiveAttribute)));
     }
 
-    public static Object GetStateProxy(this IStateProvider stateProvider, PropertyInfo property)
+    public static object GetStateProxy(this IStateProvider stateProvider, PropertyInfo property)
     {
         var getStateMethod = typeof(IStateProvider).GetMethod(nameof(IStateProvider.GetState));
         var getStateMethodInfo = getStateMethod?.MakeGenericMethod(property.PropertyType);
         var stateProxy = getStateMethodInfo?.Invoke(stateProvider, null);
 
+        if (stateProxy == null)
+        {
+            throw new InvalidOperationException($"State proxy for {property.PropertyType.Name} not found.");
+        }
+        
+        
         return stateProxy;
     }
     
