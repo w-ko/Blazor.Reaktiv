@@ -15,7 +15,7 @@
         <Copyright>2024</Copyright>
         <RepositoryUrl>https://github.com/w-ko/Blazor.Reaktiv</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageLicenseUrl>https://raw.githubusercontent.com/w-ko/Blazor.Reaktiv/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
     </PropertyGroup>
 
