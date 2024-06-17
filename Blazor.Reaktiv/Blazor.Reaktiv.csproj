@@ -15,11 +15,17 @@
         <Copyright>2024</Copyright>
         <RepositoryUrl>https://github.com/w-ko/Blazor.Reaktiv</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/w-ko/Blazor.Reaktiv/main/LICENSE</PackageLicenseUrl>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
     </PropertyGroup>
 
 
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\readme.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <ItemGroup>
