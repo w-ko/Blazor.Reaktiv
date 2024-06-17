@@ -1,4 +1,4 @@
 namespace Blazor.Reaktiv;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class ReactiveAttribute: Attribute;
+public class ReactiveAttribute: Attribute {}

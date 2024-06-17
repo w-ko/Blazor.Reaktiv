@@ -14,7 +14,7 @@ public interface IStateSubject
 public class ReactiveState<T> : IInterceptor, IStateSubject, IDisposable where T : class
 {
     private readonly ProxyGenerator _proxyGenerator = new();
-    private readonly List<IStateObserver> _observers = [];
+    private readonly List<IStateObserver> _observers = new();
     public T Object { get; }
     private readonly IReactiveQueue _reactiveQueue;
     

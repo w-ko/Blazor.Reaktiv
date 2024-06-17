@@ -14,8 +14,11 @@ public interface IObserverManager
 }
 
 
-internal class StateProvider(IEnumerable<IStateSubject> reactiveStates) : IStateProvider, IObserverManager
+internal class StateProvider : IStateProvider, IObserverManager
 {
+    private readonly IEnumerable<IStateSubject> _reactiveStates;
+    public StateProvider(IEnumerable<IStateSubject> reactiveStates) => _reactiveStates = reactiveStates;
+
     public T GetState<T>() where T : class
     {
         return GetInterceptor<T>().Object;
@@ -23,7 +26,7 @@ internal class StateProvider(IEnumerable<IStateSubject> reactiveStates) : IState
 
     private ReactiveState<T> GetInterceptor<T>() where T : class
     {
-        return reactiveStates.OfType<ReactiveState<T>>().Single();
+        return _reactiveStates.OfType<ReactiveState<T>>().Single();
     }
 
     public void Attach<T>(IStateObserver reactiveComponent) where T : class
@@ -34,7 +37,7 @@ internal class StateProvider(IEnumerable<IStateSubject> reactiveStates) : IState
     
     public void Detach(ComponentBase subscriber)
     {
-        foreach (var reactiveState in reactiveStates)
+        foreach (var reactiveState in _reactiveStates)
         {
             reactiveState.Detach(subscriber);
         }

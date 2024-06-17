@@ -24,6 +24,6 @@ internal static class ReflectionExtensions
     {
         var getAttachMethod = typeof(IObserverManager).GetMethod(nameof(IObserverManager.Attach));
         var getAttachMethodInfo = getAttachMethod?.MakeGenericMethod(property.PropertyType);
-        getAttachMethodInfo?.Invoke(observerManager, [stateObserver]);
+        getAttachMethodInfo?.Invoke(observerManager, new object[] { stateObserver });
     }
 }
