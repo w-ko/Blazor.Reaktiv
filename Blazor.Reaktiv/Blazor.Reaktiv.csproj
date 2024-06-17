@@ -4,6 +4,17 @@
         <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Version>0.1.0</Version>
+        <Title>Blazor Reactive State Managmenet</Title>
+        <Authors>w-ko</Authors>
+        <Description>
+            This library is a simple reactive state management solution for your reactive state management needs.
+            Instead of using INotifyPropertyChanged it uses Castle DynamicProxy to create a proxy object that
+            intercepts all property changes and notifies all subscribers of the change.
+        </Description>
+        <Copyright>2024</Copyright>
+        <RepositoryUrl>https://github.com/w-ko/Blazor.Reaktiv</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
 
